@@ -1,15 +1,19 @@
-# debug files
+# debug
 *.DS_Store
 *.vscode/
 *.dSTM/
 
-# output files
+# output
 *.out
 
-# object files
+# object
 *.o
 *.a
 
-# test files
+# test
 tmp/
 build/
+
+# docs
+html/
+latex/
