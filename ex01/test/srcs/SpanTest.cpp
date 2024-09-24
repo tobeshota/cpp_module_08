@@ -39,10 +39,7 @@ TEST(SpanTest, ShortestSpan) {
   span.addNumber(25);
 
   // The shortest span should be 5 - 1 = 4
-  testing::internal::CaptureStdout();
-  span.shortestSpan();
-  std::string output = testing::internal::GetCapturedStdout();
-  EXPECT_EQ(output, "4");
+  EXPECT_EQ(span.shortestSpan(), 4);
 }
 
 /**
@@ -60,10 +57,7 @@ TEST(SpanTest, LongestSpan) {
   span.addNumber(25);
 
   // The longest span should be 25 - 1 = 24
-  testing::internal::CaptureStdout();
-  span.longestSpan();
-  std::string output = testing::internal::GetCapturedStdout();
-  EXPECT_EQ(output, "24");
+  EXPECT_EQ(span.longestSpan(), 24);
 }
 
 /**

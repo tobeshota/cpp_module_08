@@ -6,6 +6,14 @@
 #include <iostream>
 #include <vector>
 
+/**
+ * @brief A class to manage a span of integers with a fixed maximum size.
+ *
+ * The Span class allows for the storage of a maximum of N integers,
+ * and provides functionality to add numbers and calculate the shortest
+ * and longest spans between them. It includes exception handling for
+ * various edge cases.
+ */
 class Span {
  private:
   std::vector<int> _vec;
@@ -20,8 +28,8 @@ class Span {
   ~Span();
 
   void addNumber(int num);
-  void shortestSpan() const;
-  void longestSpan() const;
+  int shortestSpan() const;
+  int longestSpan() const;
   void fillSpan();
   class AlreadyFilledException : public std::exception {
    public:
