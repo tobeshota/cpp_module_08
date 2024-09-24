@@ -6,7 +6,7 @@
 #    By: tobeshota <tobeshota@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 09:34:52 by tobeshota         #+#    #+#              #
-#    Updated: 2024/09/23 20:25:26 by tobeshota        ###   ########.fr        #
+#    Updated: 2024/09/24 14:40:10 by tobeshota        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,11 @@ RM				=	rm -rf
 SRCS_DIR		=	srcs/
 INCS_DIR		=	includes/
 OBJS_DIR		=	objs/
-DOCS_DIR		=	docs/
-HTML_DIR		=	$(DOCS_DIR)html/
-LATEX_DIR		=	$(DOCS_DIR)latex/
 
 SRCS			=	$(wildcard $(SRCS_DIR)*.cpp)
 HEADERS			=	$(wildcard $(INCS_DIR)*.hpp)
 SHS				=	$(wildcard *.sh)
 OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
-DOXYFILE_PATH	= $(DOCS_DIR)Doxyfile
-INDEX_HTML_PATH	= $(HTML_DIR)index.html
 
 ifeq ($(MAKECMDGOALS), debug)
 	FLAGS += -DDEBUG
@@ -51,10 +46,11 @@ $(OBJS_DIR)%.o : %.cpp
 	$(CC) $(FLAGS) -I $(INCS_DIR) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS_DIR) $(HTML_DIR) $(LATEX_DIR)
+	$(RM) $(OBJS_DIR)
 
 fclean: clean
 	make fclean -C test/
+	make fclean -C ./docs -f doc.mk
 	$(RM) $(NAME)
 
 re:		fclean all
@@ -73,8 +69,6 @@ test:
 	@ make test -C test/
 
 doc:
-	@ if [ ! -f $(DOXYFILE_PATH) ]; then doxygen -g $(DOXYFILE_PATH); fi
-	@ doxygen $(DOXYFILE_PATH)
-	@ open $(INDEX_HTML_PATH)
+	make doc -C docs/ -f doc.mk
 
 .PHONY:	all clean fclean re fmt debug address test doc
