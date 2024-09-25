@@ -1,5 +1,13 @@
 # ToDo List for Exercise 00: Easy find
 
+In this task, you will implement a templated function `easyfind` that searches for a specific integer value in a container. The function returns an iterator to the found value or throws an exception if the value is not found.
+
+## Files:
+- `easyfind.hpp` - Contains the `easyfind` function.
+- `main.cpp` - Demonstrates the function in action.
+
+## Tests:
+
 - [ ] **Test ValueFound**
     - [ ] Verify that the `easyfind` function correctly finds values present in the container and returns the appropriate iterator.
     - [ ] Test cases:

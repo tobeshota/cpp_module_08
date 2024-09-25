@@ -1,5 +1,11 @@
 # ToDo List for Exercise 02: Mutated abomination
 
+In this exercise, you will extend the functionality of the `std::stack` container by making it iterable. The goal is to create a `MutantStack` class that behaves like a stack but also supports iteration over its elements.
+
+## Files:
+- `MutantStack.hpp` - Declaration and implementation of the `MutantStack` class.
+- `main.cpp` - Demonstrates usage of `MutantStack` and compares its behavior to other containers.
+
 ## MutantStack-StdListComparisonTest
 
 ### 1. **Top Element Comparison Test**

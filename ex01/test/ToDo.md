@@ -1,5 +1,14 @@
 # ToDo List for Exercise 01: Span
 
+Here, you will create a `Span` class that can store a specified number of integers and calculate the shortest and longest spans between them. Exceptions should be thrown in cases where spans cannot be calculated or when capacity is exceeded.
+
+## Files:
+- `Span.hpp` - Declaration of the `Span` class.
+- `Span.cpp` - Implementation of the `Span` class.
+- `main.cpp` - Demonstrates usage of `Span`.
+
+## Tests:
+
 ### 1. **AddNumber Test**
    - **Description**: Verify the functionality of the `addNumber` method.
    - **Test**:
