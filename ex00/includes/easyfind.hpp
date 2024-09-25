@@ -46,3 +46,12 @@ typename T::iterator easyfind(T& vector, int num) {
   if (it == vector.end()) throw std::invalid_argument("num not found");
   return it;
 }
+
+// for const reference container
+template <typename T>
+typename T::iterator easyfind(const T& vector, int num) {
+  // template型の値の内部で定義されている型を使用する場合にもtypenameを用いる
+  typename T::iterator it = std::find(vector.begin(), vector.end(), num);
+  if (it == vector.end()) throw std::invalid_argument("num not found");
+  return it;
+}
