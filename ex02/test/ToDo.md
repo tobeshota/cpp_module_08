@@ -30,32 +30,40 @@ In this exercise, you will extend the functionality of the `std::stack` containe
 
 ## MutantStackTest
 
-### 4. **Push and Pop Test**
+### 1. **Push and Pop Test**
    - **Description**: Verify the correct push and pop behavior in `MutantStack`.
    - **Test**:
      - Push elements 5 and 10.
      - Confirm the top element is 10, pop it, and check the new top is 5.
      - Ensure the stack is empty after popping both elements.
 
-### 5. **Size Reporting Test**
+### 2. **Size Reporting Test**
    - **Description**: Verify that `MutantStack` reports the correct size after each push and pop.
    - **Test**:
      - Check initial size (0), push elements (1, 2), and verify the size increases accordingly.
      - Pop an element and ensure the size decreases correctly.
 
-### 6. **Iteration Over Elements Test**
+### 3. **Iteration Over Elements Test**
    - **Description**: Ensure that `MutantStack` can iterate through its elements.
    - **Test**:
      - Push elements (1, 2, 3) and iterate over them.
      - Confirm each element matches the expected values.
 
-### 7. **Element Order Preservation Test**
+### 4. **Reverse Iterator Test**
+   - **Description**: Verify that MutantStack supports reverse iteration.
+   - **Test**:
+     - Push elements (1, 2, 3, 4) onto the stack.
+     - Use the rbegin() and rend() reverse iterators to traverse the stack.
+     - Confirm that the elements are accessed in reverse order.
+     - Expected Result: The reverse iterator should traverse the stack in reverse order: 4, 3, 2, 1.
+
+### 5. **Element Order Preservation Test**
    - **Description**: Verify that `MutantStack` maintains the correct LIFO (Last In, First Out) order.
    - **Test**:
      - Push elements (5, 10, 15).
      - Confirm the top element is 15, pop it, and check that the new top is 10, then 5.
 
-### 8. **Copy Constructor Test**
+### 6. **Copy Constructor Test**
    - **Description**: Verify the copy constructor for `MutantStack`.
    - **Test**:
      - Push elements (1, 2, 3), create a copy, and confirm the copied stack retains the same elements and size.

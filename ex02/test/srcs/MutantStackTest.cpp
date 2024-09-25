@@ -55,6 +55,31 @@ TEST_F(MutantStackTest, IterationTest) {
 }
 
 /**
+ * @test Verify reverse iteration functionality of MutantStack.
+ *
+ * This test checks the reverse iterator support of the MutantStack by pushing
+ * elements and iterating in reverse order using rbegin() and rend().
+ */
+TEST_F(MutantStackTest, ReverseIterationTest) {
+  // Push elements into the stack
+  mstack.push(1);
+  mstack.push(2);
+  mstack.push(3);
+  mstack.push(4);
+
+  // Expected reverse order of elements
+  std::vector<int> expected_values = {4, 3, 2, 1};
+
+  // Iterate in reverse using rbegin() and rend()
+  int i = 0;
+  for (MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+       rit != mstack.rend(); ++rit, ++i) {
+    EXPECT_EQ(*rit, expected_values[i])
+        << "Reverse iterator mismatch at index " << i;
+  }
+}
+
+/**
  * @brief Test that the stack maintains the correct order of elements.
  */
 TEST_F(MutantStackTest, OrderTest) {
