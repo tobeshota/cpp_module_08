@@ -79,7 +79,7 @@ void Span::addNumber(int num) {
  * @throw OnlyOneNumberStoredException if there is only one number stored.
  * @return The shortest span as an integer.
  */
-int Span::shortestSpan() const {
+unsigned int Span::shortestSpan() const {
   if (_vec.size() == 0)
     throw EmptyException();
   else if (_vec.size() == 1)
@@ -108,7 +108,7 @@ int Span::shortestSpan() const {
  * @throw OnlyOneNumberStoredException if there is only one number stored.
  * @return The longest span as an integer.
  */
-int Span::longestSpan() const {
+unsigned int Span::longestSpan() const {
   if (_vec.size() == 0)
     throw EmptyException();
   else if (_vec.size() == 1)

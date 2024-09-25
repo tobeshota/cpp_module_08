@@ -29,8 +29,8 @@ class Span {
   ~Span();
 
   void addNumber(int num);
-  int shortestSpan() const;
-  int longestSpan() const;
+  unsigned int shortestSpan() const;
+  unsigned int longestSpan() const;
   void fillSpan();
   class AlreadyFilledException : public std::exception {
    public:
