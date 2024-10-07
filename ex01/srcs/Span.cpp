@@ -86,10 +86,10 @@ unsigned int Span::shortestSpan() const {
     throw OnlyOneNumberStoredException();
   std::vector<int> copyVec = _vec;
   std::sort(copyVec.begin(), copyVec.end());
-  int minSpan = std::numeric_limits<int>::max();
+  unsigned int minSpan = std::numeric_limits<int>::max();
   for (std::vector<int>::iterator it = copyVec.begin() + 1; it != copyVec.end();
        it++) {
-    int span = *it - *(it - 1);
+    unsigned int span = *it - *(it - 1);
     minSpan = (span <= minSpan) ? span : minSpan;
   }
   return minSpan;
