@@ -21,6 +21,14 @@ int main() {
   }
 
   try {
+    // 値4をconst参照のコンテナで検索
+    const std::vector<int> &cvec = vec;
+    std::cout << "Searching for const 4:\t\t" << *easyfind(cvec, 4) << std::endl;
+  } catch (const std::invalid_argument& e) {
+    std::cerr << e.what() << std::endl;
+  }
+
+  try {
     // 存在しない値6を検索
     std::cout << "Searching for 6:\t\t" << *easyfind(vec, 6) << std::endl;
   } catch (const std::invalid_argument& e) {
